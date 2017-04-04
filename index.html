@@ -8,6 +8,7 @@
     <link href="resourse/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="resourse/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
     <link href="styleshit.css" rel="stylesheet" type="text/css">
+    <script src="script.js" type="text/javascript"> </script>
 </head>
 
 <body style="padding-top: 20px">
@@ -71,6 +72,7 @@
                             <div>
                                 <input class="btn btn-default" id="mysub" type="submit" disabled="disabled">
                             </div>
+                            </div>
                         </div>
                     </div>
 
@@ -81,75 +83,7 @@
     </div>
 </div>
 
-<script>
 
-        function myfunc() {
-            var myval = $("#mobile-phone").val();
-            var pattern = "[0][9][0-9]{9}";
-            var password = $("#password").val();
-            var confirm = $("#confirm").val();
-            if (myval.match(pattern) && password.match(confirm)) {
-                $("#mysub").removeAttr("disabled");
-            }
-            else {
-                $("#mysub").attr('disabled', 'disabled');
-                if(password!=confirm){
-                    alert("password and confirm are not same");
-                }
-                else {
-                    alert("your phone number is not correct");
-                }
-            }
-        }
-
-
-    $(document).ready(function () {
-
-//minimum 8 characters
-        var bad = /(?=.{8,}).*/;
-//Alpha Numeric plus minimum 8
-        var good = /^(?=\S*?[a-z])(?=\S*?[0-9])\S{8,}$/;
-//Must contain at least one upper case letter, one lower case letter and (one number OR one special char).
-        var better = /^(?=\S*?[A-Z])(?=\S*?[a-z])((?=\S*?[0-9])|(?=\S*?[^\w\*]))\S{8,}$/;
-//Must contain at least one upper case letter, one lower case letter and (one number AND one special char).
-        var best = /^(?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9])(?=\S*?[^\w\*])\S{8,}$/;
-
-        $('#password').on('keyup', function () {
-            var password = $(this);
-            var pass = password.val();
-            var passLabel = $('[for="password"]');
-            var stength = 'Weak';
-            var pclass = 'danger';
-            if (best.test(pass) == true) {
-                stength = 'Very Strong';
-                pclass = 'success';
-            } else if (better.test(pass) == true) {
-                stength = 'Strong';
-                pclass = 'warning';
-            } else if (good.test(pass) == true) {
-                stength = 'Almost Strong';
-                pclass = 'warning';
-            } else if (bad.test(pass) == true) {
-                stength = 'Weak';
-            } else {
-                stength = 'Very Weak';
-            }
-
-            var popover = password.attr('data-content', stength).data('bs.popover');
-            popover.setContent();
-            popover.$tip.addClass(popover.options.placement).removeClass('danger success info warning primary').addClass(pclass);
-
-        });
-
-        $('input[data-toggle="popover"]').popover({
-            placement: 'top',
-            trigger: 'focus'
-        });
-
-    });
-
-
-</script>
 
 </body>
 </html>
