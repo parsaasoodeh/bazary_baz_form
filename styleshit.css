@@ -6,8 +6,12 @@
     font-family: "BYekan_Bold.ttf ";
     src:url(font/BYekan_Bold.ttf);
 }
+body{
+    padding-top: 20px;
+    font-family: "BYekan+.ttf";
+}
 
-body,p {
+.container {
     font-family: 'BYekan+.ttf' ;
 }
 
@@ -18,6 +22,22 @@ h1,h2,h3,h4,h5,h6 {
 .header-margin{
     margin-bottom: 20px;
 }
+.panel-body{
+    padding: 10px 30px 10px 30px
+}
+.pull-right{
+    direction: rtl;
+    text-align: right;
+}
+.required > label:after{
+    content: " *";
+    color: red;
+}
+#title2{
+    margin: 8% 0 6% 0;
+    display: block;
+}
+
 /*برای علامت قفل گذرواژه و کادرش*/
 .input-group .form-control:last-child{
     border-top-right-radius: 0 !important;
@@ -109,71 +129,46 @@ h1,h2,h3,h4,h5,h6 {
 
 
 /*slider*/
-
-/*
-#body {
-    font: 14px Georgia, serif;
-    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #3b3b3b),color-stop(1, #000000));
-    background-repeat: no-repeat;
-    min-height: 110px;
-
-}
-#page-wrap { width: 720px; margin: 0 auto; padding-top: 100px; }
-*/
-
-#well {
-    padding: 14px 20px 20px 20px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-
-    background: -moz-linear-gradient(top, #010101, #181818);
-    background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #010101),color-stop(1, #181818));
-
-    border: 2px solid #454545;
-    overflow: hidden;
-
-    -webkit-user-select: none;
+#slider0 {
+    width: 350px;
+    background-color: #D8D8CA;
+    position: relative
 }
 
-h2 {
-    background: -moz-linear-gradient(left, #4d4d4d, 0.4, #4d4d4d, 0.5, white, 0.6, #4d4d4d, #4d4d4d);
-    background: -webkit-gradient(linear,left top,right top,color-stop(0, #4d4d4d),color-stop(0.4, #4d4d4d),color-stop(0.5, white),color-stop(0.6, #4d4d4d),color-stop(1, #4d4d4d));
-
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
-
-    -moz-text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-
-    -webkit-animation: slidetounlock 5s infinite;
-
-    font-size: 20px;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-
-    padding: 0;
-    width: 200%;
-
-    -webkit-text-size-adjust: none;
+@font-face {
+    font-family: "FontAwesome ";
+    src: url(resourse/font-awesome/fonts/fontawesome-webfont.svg);
 }
-#slider {
-    background: url(images/arrow.png) no-repeat;
-    width: 146px;
-    height: 98px;
+
+#slider1 {
+    width: 60px;
     display: inline-block;
-    vertical-align: middle;
-    /*line-height: 1;*/
+    line-height: 1;
+    text-align: center;
+    background-color: white;
+    z-index: 2;
 }
 
-@-webkit-keyframes slidetounlock {
-    0% {
-        background-position: -720px 0;
-    }
-    100%{
-        background-position: 720px 0;
-    }
+.icolor {
+    color: #595959;
+
 }
-#captcha-slider{
-    padding: 30px 10px 30px 10px;
+
+#text {
+    display: flex;
+    position: absolute;
+    padding-left: 36%;
+    font-size: 16px;
+    z-index: 1;
+}
+
+#green-area {
+    background-color: green;
+    height: 100%;
+    position: absolute;
+}
+#succes{
+    display: none;
+    font-size:larger;
+    text-align: center;
 }
